@@ -1,12 +1,140 @@
-html {
+:root {
+    /* Primary */
+    --Red: hsl(1, 90%, 64%);
+    --Blue: hsl(219, 85%, 26%);
+    /* Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Very-light-grayish-blue: hsl(210, 60%, 98%);
+    --Light-grayish-blue-1: hsl(211, 68%, 94%);
+    --Light-grayish-blue-2: hsl(205, 33%, 90%);
+    --Grayish-blue: hsl(219, 14%, 63%);
+    --Dark-grayish-blue: hsl(219, 12%, 42%);
+    --Very-dark-blue: hsl(224, 21%, 14%);
 
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--Light-grayish-blue-1);
+    font-weight: 300;
+    height: 100vh;
+    width: 100vw;
+    font-size: 16px;
+    /* font-family: 'Spartan', sans-serif; */
 }
 
 body {
+    background-color: var(--White);
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 0 10px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 500;
+    color: var(--Grayish-blue);
+}
+
+img {
+    max-height: 45px;
+    max-width: 45px;
+    /* object-fit: cover; */
+}
+
+p {
+    margin: 5px;
+}
+
+.name {
+    font-weight: 800;
+}
+
+.time {
+    color: var(--Grayish-blue);
+    margin-top: 0px;
 
 }
 
+p.pm {
+    border: 1px solid var(--Grayish-blue);
+    padding: 10px;
+    margin: 10px;
+}
 
+.post {}
+
+.external {
+    font-weight: 800;
+    color: var(--Dark-grayish-blue);
+}
+
+.external.name {
+    color: var(--Very-dark-blue);
+}
+
+
+.external:hover,
+#markRead:hover {
+    cursor: pointer;
+    color: var(--Blue)
+}
+
+#notiAll_markRead {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+    margin-bottom: 10px;
+        margin-top: 5px;
+}
+
+#noti {
+    font-weight: 800;
+    color: var(--Very-dark-blue);
+}
+
+#notiNum {
+    color: var(--White);
+    background-color: var(--Blue);
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+#notiAll {}
+
+#markRead {}
+
+#pic{
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.outsideWrapper {
+    display: flex;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.insideWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.unread {
+    background-color: var(--Very-light-grayish-blue);
+    border-radius: 5px;
+}
+
+.outsideWrapper.unread p:first-child:after {
+    content: " •";
+    color: rgb(255, 106, 0);
+    display: inline-block;
+    transform: scale(1.7);
+    margin-left: 5px;
+}
+
+.read {}
 
 .attribution {
     font-size: 11px;
@@ -17,3 +145,18 @@ body {
     color: hsl(228, 45%, 44%);
 }
 
+@media only screen and (min-width: 800px) {
+    * {
+        transition: .1s ease;
+    }
+
+    body {
+        max-width: 600px;
+        margin: 25px auto;
+        padding: 20px;
+    }
+
+    #notiAll {
+        font-size: 1.3em;
+    }
+}
